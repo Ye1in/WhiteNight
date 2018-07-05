@@ -1,0 +1,249 @@
+body{
+	padding-right: 0px;
+	padding-left: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	font-family: 'Open Sans', sans-serif;
+	background-size: cover;
+	-webkit-background-size:cover; 
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	-ms-background-size:cover;
+	background: #ededed;
+}
+/*div{
+	table-layout: fixed;
+	word-wrap: break-word;
+	overflow: hidden;
+	防止内容过多倍撑变形
+}*/
+ul,ol,li{
+	padding:0;
+	margin:0;
+	list-style: none;
+}
+.header{
+	text-align: center;
+	margin-top: 100px;
+}
+.container{
+	padding-right: 0;
+	padding-left: 0;
+	margin-right: auto;
+	margin-left: auto;
+	width: 1150px;
+}
+.header-bottom{
+	padding: 1.5em 0 1.5em;
+	border-bottom: 1px solid #5f5e5e;
+	border-top: 1px solid #5f5e5e;
+	table-layout: fixed;
+	word-wrap: break-word;
+	overflow: hidden;
+}
+.header ul li{
+	padding: 0 10px 0 0;
+}
+/*--start navbar--*/
+.navbar{
+	float: left;
+}
+.navbar ul{
+	padding: 0;
+	margin: 0;
+}
+.navbar ul li{
+	display: inline-block;
+	padding: 0 10px 0 10px;
+}
+.navbar ul li a{
+	position: relative;
+	display: inline-block;
+	margin: 0px 2px;
+	outline: none;
+	color: #5f5e5e;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 400;
+	text-shadow: 0 0 1px rgba(255,255,255,0.3);
+	font-size: 1em;
+}
+.navbar ul li a:hover,
+.navbar ul li.active a{
+	color: #e6a549;
+}
+/*--start menu--*/
+.navbar ul a::after {
+	position: absolute;
+	top: 110%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: #e6a549;
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);
+}
+.navbar ul a:hover::after,
+.navbar ul a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	transform: translateY(0);
+}
+
+/*--strart social-media--*/
+.social-media{
+	position: relative;
+	float: right;
+}
+.social-media ul{
+	padding: 0;
+	margin: 0;
+}
+.social-media ul li{
+	display: inline-block;
+	margin: 0 .5em;
+	outline: none;
+	text-decoration: none;
+}
+.social-media ul li a{
+	margin: 0 2px;
+	color: #5f5e5e;
+	text-decoration: none;
+	font-size: 1em;
+}
+.social-media ul li:hover{
+	color: #e6a549;
+	transition-duration: 0.3s;
+	/*transition: color, 0.3s;*/
+	-webkit-transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+	transform: rotate(40deg);
+}
+.social-media ul li a:hover{
+	color: #e6a549;
+	transition-duration: 0.3s;
+}
+.navbar:after,
+.social-media:after{
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.social-img{
+	width: 150px;
+	height: 150px;
+	display: none;
+	position: relative;
+	float: right;
+	right: 22em;
+	bottom: 1em;
+
+}
+/*Slider Start*/
+.slider{
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1100px;
+}
+.slider ul {
+	padding: 0;
+}
+.slider ul li a{
+	display: block;
+	cursor: default;
+}
+.slider ul li a img{
+	width: 1100px;
+	height:750px;
+}
+#msg{
+    width:1100px;
+    height:150px;
+    text-indent:10px;
+    position:relative;
+    background:rgba(207,207,207,0.5);
+    z-index:1;
+    top: -190px;
+    font-style: italic;
+	text-align: center;
+	color: #3b3b3b;
+	font-size: 1.6em;
+	line-height: 1.8em;
+}
+.slider ol{
+	position: relative;
+	display: inline-block;
+	top: -35px;
+	margin: 0;
+	padding: 8px 0 8px 0;
+	background:rgba(255,255,255,0);
+	border-radius:7px;
+	left: 50%;
+	z-index:2;
+	-webkit-transform:translateX(-50%);
+	-moz-transform:translateX(-50%);
+}
+.slider ol:hover{
+	background: rgba(255,255,255,.7);
+	transition-duration: 0.3s;
+}
+.slider ol li{
+	margin-right: 20px;
+	margin-left: 20px;
+	float:left; 
+	width:8px; 
+	height:8px;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+}
+.slider span{
+    width:36px;
+    height:36px;
+    line-height: 36px;
+    font-size:36px;
+    color:rgba(0,0,0,.4);
+    background:rgba(255,255,255,.1);
+    position:relative;
+    font-weight: bold;
+    top:-400px;
+}
+.slider span:hover{
+    color: rgba(0,0,0,.7);
+    background: rgba(255,255,255,.7);
+}
+#ltBtn{
+	right: 17.5%;
+	left: auto;
+	cursor: default;
+}
+#rtBtn{
+    left: 78.68%;
+    right: auto;
+    cursor: default;
+}
+/*Frame Start*/
+.frame{
+	margin-top: -9em;
+}
+.frame h3{
+	font-style: italic;
+	text-align: center;
+	color: #3b3b3b;
+	font-size: 1.6em;
+	line-height: 1.8em;
+	font-weight: 500;
+	padding: 2em 2em;
+	box-shadow: 1px 0px 5px 0px #BBB9B9;
+	margin: 0;
+}
