@@ -35,7 +35,7 @@
 								<a href="index.jsp">Home</a>
 							</li>
 							<li id="blog">
-								<a href="blog.jsp">Blog</a>
+								<a href="article.action">Blog</a>
 							</li>
 							<li id="about">
 								<a href="about.jsp">About</a>
@@ -47,9 +47,23 @@
 								<s:if test="#session.user==null">
 									<a href="login.jsp">Login</a>
 								</s:if>
-								<s:else>
+
+							</li>
+							<li class="active">
+								<s:if test="#session.user!=null">
+									<a href="mycenter.action">Hello&nbsp;<s:property
+											value="#session.user.username" /> </a>
+								</s:if>
+							</li>
+							<li id="login">
+								<s:if test="#session.user!=null">
 									<a href="logout.action">Logout</a>
-								</s:else>
+								</s:if>
+							</li>
+							<li>
+								<s:if test="#session.user.id==1">
+									<a href="newarticle.jsp">New Article</a>
+								</s:if>
 							</li>
 						</ul>
 					</div>
@@ -82,17 +96,23 @@
 		<img class="social-img" id="img-qq" src="img/img-qq.png">
 		<img class="social-img" id="img-weibo" src="img/img-weibo.png">
 		<script type="text/javascript">
-			var v;
-			if(window.location.pathname=="/WhiteNight/index.jsp")
-			{
-				v=$("home");
-				v.setAttribute("class","active");
-			}
-			if(window.location.pathname=="/WhiteNight/login.jsp")
-			{
-				v=$("login");
-				v.setAttribute("class","active");
-			}
-		</script>
+var v;
+if (window.location.pathname == "/WhiteNight/index.jsp") {
+	v = $("home");
+	v.setAttribute("class", "active");
+}
+if (window.location.pathname == "/WhiteNight/blog.jsp") {
+	v = $("blog");
+	v.setAttribute("class", "active");
+}
+if (window.location.pathname == "/WhiteNight/login.jsp") {
+	v = $("login");
+	v.setAttribute("class", "active");
+}
+if (window.location.pathname == "/WhiteNight/newarticle.jsp") {
+	v = $("login");
+	v.setAttribute("class", "active");
+}
+</script>
 	</body>
 </html>

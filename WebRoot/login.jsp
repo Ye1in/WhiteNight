@@ -12,7 +12,7 @@
 		<base href="<%=basePath%>">
 
 		<title>Login</title>
-
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<meta http-equiv="pragma" content="no-cache">
 		<meta http-equiv="cache-control" content="no-cache">
 		<meta http-equiv="expires" content="0">
@@ -25,21 +25,20 @@
 	<body>
 		<!-- import head -->
 		<jsp:include page="head.jsp"></jsp:include>
-
-		<div>
-			<div align="center">
-				<form action="login.action" method="post" name="login">
-					用户登录
-					<br>
-					用户名:
-					<input type="text" name="user.username" size=20 id="username">
-					<br>
-					密&nbsp;&nbsp;&nbsp;&nbsp;码:
-					<input type="password" name="user.password" size=21 id="username">
-					<br>
-					<input type="submit" value="登录">
-				</form>
-			</div>
-		</div>
+		<form class="inputform" action="login.action" method="post"
+			name="login">
+			<fieldset>
+				<h2 class="logtitle">
+					Login your account
+				</h2>
+				<input type="text" name="user.username" size=20 id="username"
+					placeholder="Name">
+				<input type="password" name="user.password" size=20 id="username"
+					placeholder="Password">
+				<input type="submit" name="login" class="loginbutton" value="Login">
+				<a href="regist.jsp"><input type="button" class="registbutton"
+						value="Regist"> </a>
+			</fieldset>
+		</form>
 	</body>
 </html>

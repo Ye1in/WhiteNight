@@ -16,7 +16,6 @@
 
 		<title>White Night</title>
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
-		<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
 		<script type="text/javascript" src="./js/js.js">
 </script>
 		<script type="text/javascript" src="./js/tool.js">
@@ -61,14 +60,9 @@
 					</ul>
 				</div>
 				<script type="text/javascript">
-
-	//var s = new Slider("slide");
-
+var s = new Slider("slide");
 //console.info(s);
 </script>
-
-
-
 			</div>
 		</div>
 		<!--Frame Start-->

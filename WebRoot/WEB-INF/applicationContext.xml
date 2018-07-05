@@ -27,6 +27,35 @@
 		</property>
 		<property name="mappingResources">
 			<list>
-				<value>xin/whitenight/model/Usertable.hbm.xml</value></list>
-		</property></bean>
+				<value>xin/whitenight/model/Usertable.hbm.xml</value>
+				<value>xin/whitenight/model/Articletable.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userDAO" class="xin.whitenight.dao.impl.UserDAO">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="userService" class="xin.whitenight.service.impl.UserService">
+		<property name="userDAO" ref="userDAO">
+		</property>
+	</bean>
+	<bean id="userAction" class="xin.whitenight.action.UserAction">
+		<property name="userService" ref="userService">
+		</property>
+	</bean>
+
+	<bean id="articleDAO" class="xin.whitenight.dao.impl.ArticleDAO">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="articleService" class="xin.whitenight.service.impl.ArticleService">
+		<property name="articleDAO" ref="articleDAO">
+		</property>
+	</bean>
+	<bean id="articleAction" class="xin.whitenight.action.ArticleAction">
+		<property name="articleService" ref="articleService">
+		</property>
+	</bean>
+	
+	
 </beans>

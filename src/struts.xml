@@ -4,7 +4,22 @@
 <struts>
 	<include file="struts-default.xml" />
 	<package name="default" extends="struts-default">
-		<!--以后在这里添加action-->
+
+		<action name="login" class="xin.whitenight.action.UserAction"
+			method="login">
+			<result name="success">/index.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+
+		<action name="logout" class="xin.whitenight.action.UserAction"
+			method="logout">
+			<result name="success">/index.jsp</result>
+		</action>
+
+		<action name="article" class="xin.whitenight.action.ArticleAction"
+			method="getArticlelist">
+			<result name="success">/articlelist.jsp</result>
+		</action>
 	</package>
 </struts>
 		
