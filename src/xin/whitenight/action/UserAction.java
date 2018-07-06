@@ -12,6 +12,7 @@ public class UserAction extends ActionSupport {
 
 	protected Usertable user;
 	protected IUserService userService;
+	protected String confirmPwd;
 
 	public String login() {
 
@@ -24,6 +25,18 @@ public class UserAction extends ActionSupport {
 			session.put("user", user1);
 		}
 		return SUCCESS;
+
+	}
+
+	public String regist() {
+
+		if (user.getPassword().equals(confirmPwd)) {
+			if (!userService.regist(user))
+				return ERROR;
+			return SUCCESS;
+		} else {
+			return ERROR;
+		}
 
 	}
 
@@ -43,6 +56,14 @@ public class UserAction extends ActionSupport {
 
 	public void setUserService(IUserService userService) {
 		this.userService = userService;
+	}
+
+	public String getConfirmPwd() {
+		return confirmPwd;
+	}
+
+	public void setConfirmPwd(String confirmPwd) {
+		this.confirmPwd = confirmPwd;
 	}
 
 }

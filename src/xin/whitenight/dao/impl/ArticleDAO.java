@@ -12,12 +12,12 @@ import xin.whitenight.model.Usertable;
 
 public class ArticleDAO extends HibernateDaoSupport implements IArticleDAO {
 
-	public List getCurrentIT(int currentPage, int pageSize) {
+	public List getCurrentITT(int currentPage, int pageSize) {
 
 		Session session = this.getHibernateTemplate().getSessionFactory()
 				.openSession();
 		Query query = session
-				.createQuery("select new xin.whitenight.model.Articletable(id,title) from Articletable order by time desc");
+				.createQuery("SELECT new xin.whitenight.model.Articletable(id,title,time) from Articletable order by time desc");
 		int startRow = (currentPage - 1) * pageSize;
 		query.setFirstResult(startRow);
 		query.setMaxResults(pageSize);
@@ -34,6 +34,17 @@ public class ArticleDAO extends HibernateDaoSupport implements IArticleDAO {
 		Query query = session.createQuery("SELECT count(*) from Articletable");
 		Long result = (Long) query.uniqueResult();
 		return result.intValue();
+
+	}
+
+	public String getArticleByID(int ID) {
+
+		Session session = this.getHibernateTemplate().getSessionFactory()
+				.openSession();
+		Query query = session
+				.createQuery("SELECT content from Articletable where id=?");
+		query.setParameter(0, ID);
+		return (String) query.uniqueResult();
 
 	}
 }

@@ -17,7 +17,7 @@ public class ArticleAction extends ActionSupport {
 
 	public String getArticlelist() {
 
-		List list = articleService.getCurrentIT(currentPage, 6);
+		List list = articleService.getCurrentITT(currentPage, 6);
 		Pager pager = new Pager(currentPage, articleService.getTotalsize());
 		// Map request = (Map) ActionContext.getContext().get("request");
 		// request.put("article", list);
@@ -25,6 +25,16 @@ public class ArticleAction extends ActionSupport {
 		Map session = ActionContext.getContext().getSession();
 		session.put("article", list);
 		session.put("pager", pager);
+		return SUCCESS;
+
+	}
+
+	public String getArticleContent() {
+
+		String content = articleService.getArticleByID(article.getId());
+		if (content.isEmpty())
+			return ERROR;
+		article.setContent(content);
 		return SUCCESS;
 
 	}

@@ -9,9 +9,15 @@ public class ArticleService implements IArticleService {
 
 	private IArticleDAO articleDAO;
 
-	public List getCurrentIT(int currentPage, int pageSize) {
+	public List getCurrentITT(int currentPage, int pageSize) {
 
-		return articleDAO.getCurrentIT(currentPage, pageSize);
+		return articleDAO.getCurrentITT(currentPage, pageSize);
+
+	}
+
+	public String getArticleByID(int ID) {
+
+		return articleDAO.getArticleByID(ID);
 
 	}
 

@@ -35,7 +35,7 @@
 								<a href="index.jsp">Home</a>
 							</li>
 							<li id="blog">
-								<a href="article.action">Blog</a>
+								<a href="articlelist.action">Blog</a>
 							</li>
 							<li id="about">
 								<a href="about.jsp">About</a>
@@ -52,7 +52,7 @@
 							<li class="active">
 								<s:if test="#session.user!=null">
 									<a href="mycenter.action">Hello&nbsp;<s:property
-											value="#session.user.username" /> </a>
+											value="#session.user.name" /> </a>
 								</s:if>
 							</li>
 							<li id="login">
@@ -101,7 +101,8 @@ if (window.location.pathname == "/WhiteNight/index.jsp") {
 	v = $("home");
 	v.setAttribute("class", "active");
 }
-if (window.location.pathname == "/WhiteNight/blog.jsp") {
+if (window.location.pathname == "/WhiteNight/articlelist.jsp"
+		|| window.location.pathname == "/WhiteNight/article.jsp") {
 	v = $("blog");
 	v.setAttribute("class", "active");
 }

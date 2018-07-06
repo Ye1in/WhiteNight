@@ -31,9 +31,11 @@
 					<s:iterator value="#session.article" id="article">
 						<li>
 							<a
-								href="browseBookPaging.action?catalogid=<s:property value="#catalog.catalogid"/>"
+								href="article.action?article.id=<s:property value="#article.id"/>"
 								target=_self> <s:property value="#article.title" /> </a>
-							<s:property value="#article.time" />
+							<p>
+								<s:property value="#article.time" />
+							</p>
 						</li>
 					</s:iterator>
 

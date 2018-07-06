@@ -5,8 +5,10 @@ import java.util.Map;
 
 public interface IArticleService {
 
-	public List getCurrentIT(int currentPage, int pageSize);
+	public List getCurrentITT(int currentPage, int pageSize);
 
 	public int getTotalsize();
+
+	public String getArticleByID(int ID);
 
 }

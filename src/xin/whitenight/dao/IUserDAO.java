@@ -6,4 +6,6 @@ public interface IUserDAO {
 
 	public Usertable select(String username, String password);
 
+	public boolean regist(Usertable user);
+
 }

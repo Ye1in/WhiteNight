@@ -14,6 +14,12 @@ public class UserService implements IUserService {
 
 	}
 
+	public boolean regist(Usertable user) {
+
+		return userDAO.regist(user);
+
+	}
+
 	public void setUserDAO(IUserDAO userDAO) {
 		this.userDAO = userDAO;
 	}

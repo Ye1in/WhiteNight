@@ -6,4 +6,6 @@ public interface IUserService {
 
 	public Usertable select(String username, String password);
 
+	public boolean regist(Usertable user);
+
 }

@@ -1,6 +1,8 @@
 package xin.whitenight.model;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Articletable entity. @author MyEclipse Persistence Tools
@@ -12,7 +14,7 @@ public class Articletable implements java.io.Serializable {
 
 	private Integer id;
 	private String title;
-	private Timestamp time;
+	private String time;
 	private String content;
 
 	// Constructors
@@ -22,21 +24,23 @@ public class Articletable implements java.io.Serializable {
 	}
 
 	/** my constructor */
-	public Articletable(int id, String title) {
+	public Articletable(int id, String title, Date time) {
 		this.id = id;
 		this.title = title;
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		this.time = df.format(time);
 	}
 
 	/** minimal constructor */
 	public Articletable(String title, Timestamp time) {
 		this.title = title;
-		this.time = time;
+		this.time = time.toString();
 	}
 
 	/** full constructor */
 	public Articletable(String title, Timestamp time, String content) {
 		this.title = title;
-		this.time = time;
+		this.time = time.toString();
 		this.content = content;
 	}
 
@@ -58,11 +62,11 @@ public class Articletable implements java.io.Serializable {
 		this.title = title;
 	}
 
-	public Timestamp getTime() {
-		return this.time;
+	public String getTime() {
+		return time;
 	}
 
-	public void setTime(Timestamp time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 

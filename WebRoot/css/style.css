@@ -286,17 +286,20 @@ ul,ol,li {
 	text-decoration: none;
 	font-style: Î¢ÈíÑÅºÚ;
 	color: #3b3b3b;
-	font-size: 1.2em;
 	line-height: 1.4em;
 	font-weight: 500;
 	padding: 2em 2em;
 }
 
 .article li {
-	margin-right: 20em;
-	width: 20em;
+	margin-left: 5em;
+	width: 30em;
 }
-
+.article p{
+	left: 0;
+	display: inline-block!important;
+	
+	}
 .logtitle {
 	font-size: 15px;
 	text-transform: uppercase;
@@ -332,7 +335,7 @@ ul,ol,li {
 	width: 100px;
 	background: #27AE60;
 	font-weight: bold;
-	color: white!important;
+	color: white !important;
 	border: 0 none;
 	border-radius: 1px;
 	cursor: pointer;

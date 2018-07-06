@@ -16,10 +16,23 @@
 			<result name="success">/index.jsp</result>
 		</action>
 
-		<action name="article" class="xin.whitenight.action.ArticleAction"
+		<action name="regist" class="xin.whitenight.action.UserAction"
+			method="regist">
+			<result name="success">/login.jsp</result>
+			<result name="error">/regist.jsp</result>
+		</action>
+
+		<action name="articlelist" class="xin.whitenight.action.ArticleAction"
 			method="getArticlelist">
 			<result name="success">/articlelist.jsp</result>
 		</action>
+
+		<action name="article" class="xin.whitenight.action.ArticleAction"
+			method="getArticleContent">
+			<result name="success">/article.jsp</result>
+			<result name="error">/articlelist.jsp</result>
+		</action>
+
 	</package>
 </struts>
 		

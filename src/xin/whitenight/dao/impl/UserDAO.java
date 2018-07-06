@@ -24,4 +24,14 @@ public class UserDAO extends HibernateDaoSupport implements IUserDAO {
 		return user;
 	}
 
+	public boolean regist(Usertable user) {
+
+		try {
+			this.getHibernateTemplate().save(user);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
 }
