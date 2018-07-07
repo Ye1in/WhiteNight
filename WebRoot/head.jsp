@@ -51,7 +51,7 @@
 							</li>
 							<li class="active">
 								<s:if test="#session.user!=null">
-									<a href="mycenter.action">Hello&nbsp;<s:property
+									<a href="accountcenter.jsp">Hello&nbsp;<s:property
 											value="#session.user.name" /> </a>
 								</s:if>
 							</li>
