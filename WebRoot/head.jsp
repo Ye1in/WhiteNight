@@ -114,6 +114,10 @@ if (window.location.pathname == "/WhiteNight/newarticle.jsp") {
 	v = $("login");
 	v.setAttribute("class", "active");
 }
+if (window.location.pathname == "/WhiteNight/article.jsp") {
+	v = $("blog");
+	v.setAttribute("class", "active");
+}
 </script>
 	</body>
 </html>

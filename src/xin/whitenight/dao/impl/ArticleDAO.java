@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import xin.whitenight.dao.IArticleDAO;
+import xin.whitenight.model.Articletable;
 import xin.whitenight.model.Usertable;
 
 public class ArticleDAO extends HibernateDaoSupport implements IArticleDAO {
@@ -46,5 +47,15 @@ public class ArticleDAO extends HibernateDaoSupport implements IArticleDAO {
 		query.setParameter(0, ID);
 		return (String) query.uniqueResult();
 
+	}
+
+	public boolean newArticle(Articletable article) {
+
+		try {
+			this.getHibernateTemplate().save(article);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 }

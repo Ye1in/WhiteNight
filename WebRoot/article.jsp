@@ -5,6 +5,8 @@
 	String basePath = request.getScheme() + "://"
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
+			System.out.println(basePath);
+	System.out.println(path);
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -13,7 +15,12 @@
 		<base href="<%=basePath%>">
 
 		<title></title>
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
 
+		<script type="text/javascript" src="./js/js.js">
+</script>
+		<script type="text/javascript" src="./js/tool.js">
+</script>
 		<meta http-equiv="pragma" content="no-cache">
 		<meta http-equiv="cache-control" content="no-cache">
 		<meta http-equiv="expires" content="0">
@@ -26,6 +33,14 @@
 	<body>
 		<!-- import head -->
 		<jsp:include page="head.jsp"></jsp:include>
-		<s:property value="" />
+		<div class="container">
+			<div class="textarea">
+				<s:property value="article.content" escape="false" />
+			</div>
+		</div>
+
+		<script type="text/javascript">
+document.getElementsByTagName("title")[0].innerText =
+</script>
 	</body>
 </html>

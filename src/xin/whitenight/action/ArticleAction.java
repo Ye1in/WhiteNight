@@ -1,5 +1,6 @@
 package xin.whitenight.action;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import xin.whitenight.model.Articletable;
@@ -23,7 +24,7 @@ public class ArticleAction extends ActionSupport {
 		// request.put("article", list);
 		// request.put("pager", pager);
 		Map session = ActionContext.getContext().getSession();
-		session.put("article", list);
+		session.put("articlelist", list);
 		session.put("pager", pager);
 		return SUCCESS;
 
@@ -36,6 +37,19 @@ public class ArticleAction extends ActionSupport {
 			return ERROR;
 		article.setContent(content);
 		return SUCCESS;
+
+	}
+
+	public String newArticle() {
+
+		article.setTime(new Date().toString());
+		if (articleService.newArticle(article))
+			return SUCCESS;
+		else {
+			Map session = ActionContext.getContext().getSession();
+			session.put("newarticle", article);
+			return ERROR;
+		}
 
 	}
 
