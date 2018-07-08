@@ -1,7 +1,6 @@
 package xin.whitenight.service.impl;
 
 import java.util.List;
-
 import xin.whitenight.dao.IArticleDAO;
 import xin.whitenight.model.Articletable;
 import xin.whitenight.service.IArticleService;

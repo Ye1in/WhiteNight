@@ -321,7 +321,8 @@ div {
 	padding: 15px;
 	border: 1px solid #ccc;
 	margin-bottom: 10px;
-	width: 100%; box-sizing =border-box;
+	width: 100%;
+	box-sizing: border-box;
 	font-family: montserrat;
 	color: #2C3E50;
 	font-size: 13px;
@@ -551,3 +552,4 @@ div {
 .textarea {
 	padding-top: 64px;
 }
+

@@ -1,7 +1,7 @@
 package xin.whitenight.model;
 
+
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -14,7 +14,7 @@ public class Articletable implements java.io.Serializable {
 
 	private Integer id;
 	private String title;
-	private String time;
+	private Timestamp time;
 	private String content;
 
 	// Constructors
@@ -27,20 +27,21 @@ public class Articletable implements java.io.Serializable {
 	public Articletable(int id, String title, Date time) {
 		this.id = id;
 		this.title = title;
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-		this.time = df.format(time);
+		this.time = new Timestamp(time.getTime());
+//		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+//		this.time = df.format(time);
 	}
 
 	/** minimal constructor */
 	public Articletable(String title, Timestamp time) {
 		this.title = title;
-		this.time = time.toString();
+		this.time = time;
 	}
 
 	/** full constructor */
 	public Articletable(String title, Timestamp time, String content) {
 		this.title = title;
-		this.time = time.toString();
+		this.time = time;
 		this.content = content;
 	}
 
@@ -62,11 +63,11 @@ public class Articletable implements java.io.Serializable {
 		this.title = title;
 	}
 
-	public String getTime() {
-		return time;
+	public Timestamp getTime() {
+		return this.time;
 	}
 
-	public void setTime(String time) {
+	public void setTime(Timestamp time) {
 		this.time = time;
 	}
 

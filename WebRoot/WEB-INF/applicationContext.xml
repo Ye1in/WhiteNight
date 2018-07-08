@@ -29,6 +29,8 @@
 			<list>
 				<value>xin/whitenight/model/Usertable.hbm.xml</value>
 				<value>xin/whitenight/model/Articletable.hbm.xml</value>
+				<value>xin/whitenight/model/Commenttable.hbm.xml</value>
+				<value>xin/whitenight/model/Messagetable.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -56,6 +58,25 @@
 		<property name="articleService" ref="articleService">
 		</property>
 	</bean>
-	
-	
+
+	<bean id="commentDAO" class="xin.whitenight.dao.impl.CommentDAO">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="commentService" class="xin.whitenight.service.impl.CommentService">
+		<property name="commentDAO" ref="commentDAO"></property>
+	</bean>
+	<bean id="commentAction" class="xin.whitenight.action.CommentAction">
+		<property name="commentService" ref="commentService"></property>
+	</bean>
+
+	<bean id="messageDAO" class="xin.whitenight.dao.impl.MessageDAO">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="messageService" class="xin.whitenight.service.impl.MessageService">
+		<property name="messageDAO" ref="messageDAO"></property>
+	</bean>
+	<bean id="messageAction" class="xin.whitenight.action.MessageAction">
+		<property name="messageService" ref="messageService"></property>
+	</bean>
+
 </beans>

@@ -1,12 +1,11 @@
 package xin.whitenight.action;
 
-import java.util.Date;
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Map;
 import xin.whitenight.model.Articletable;
 import xin.whitenight.service.IArticleService;
 import xin.whitenight.tool.Pager;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -36,13 +35,15 @@ public class ArticleAction extends ActionSupport {
 		if (content.isEmpty())
 			return ERROR;
 		article.setContent(content);
+		Map session = ActionContext.getContext().getSession();
+		session.put("article", article);
 		return SUCCESS;
 
 	}
 
 	public String newArticle() {
 
-		article.setTime(new Date().toString());
+		article.setTime(new Timestamp(System.currentTimeMillis()));
 		if (articleService.newArticle(article))
 			return SUCCESS;
 		else {

@@ -34,6 +34,17 @@
 			<result name="error">/articlelist.jsp</result>
 		</action>
 
+		<action name="newarticle" class="xin.whitenight.action.ArticleAction"
+			method="newArticle">
+			<result name="success">/articlelist.jsp</result>
+			<result name="error">/newarticle.jsp</result>
+		</action>
+
+		<action name="comment" class="xin.whitenight.action.CommentAction"
+			method="getCommentByArticle">
+			<result name="success">/article.jsp</result>
+		</action>
+
 	</package>
 </struts>
 		

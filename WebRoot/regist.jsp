@@ -30,20 +30,23 @@
 	<body>
 		<!-- import head -->
 		<jsp:include page="head.jsp"></jsp:include>
-		<form class="inputform" action="regist.action" method="post"
-			name="login">
-			<fieldset>
-				<h2 class="logtitle">
-					Regist your account
-				</h2>
-				<input type="text" name="user.username" size=20 id="username"
-					placeholder="Name">
-				<input type="password" name="user.password" size=20 id="password"
-					placeholder="Password">
-				<input type="password" name="confirmPwd" size=20 id="confirmpwd"
-					placeholder="Confirm Password">
-				<input type="submit" name="login" class="loginbutton" value="Regist">
-			</fieldset>
-		</form>
+		<div class="container">
+			<form class="inputform" action="regist.action" method="post"
+				name="login">
+				<fieldset>
+					<h2 class="logtitle">
+						Regist your account
+					</h2>
+					<input type="text" name="user.username" size=20 id="username"
+						placeholder="Name" autocomplete="off">
+					<input type="password" name="user.password" size=20 id="password"
+						placeholder="Password" autocomplete="off">
+					<input type="password" name="confirmPwd" size=20 id="confirmpwd"
+						placeholder="Confirm Password" autocomplete="off">
+					<input type="submit" name="login" class="loginbutton"
+						value="Regist">
+				</fieldset>
+			</form>
+		</div>
 	</body>
 </html>

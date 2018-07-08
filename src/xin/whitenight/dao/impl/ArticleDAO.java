@@ -1,15 +1,11 @@
 package xin.whitenight.dao.impl;
 
 import java.util.List;
-import java.util.Map;
-
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
-
 import xin.whitenight.dao.IArticleDAO;
 import xin.whitenight.model.Articletable;
-import xin.whitenight.model.Usertable;
 
 public class ArticleDAO extends HibernateDaoSupport implements IArticleDAO {
 
