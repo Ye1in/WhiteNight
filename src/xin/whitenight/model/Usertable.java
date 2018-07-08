@@ -1,5 +1,8 @@
 package xin.whitenight.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Usertable entity. @author MyEclipse Persistence Tools
  */
@@ -14,6 +17,8 @@ public class Usertable implements java.io.Serializable {
 	private String name;
 	private Boolean sex;
 	private Integer age;
+	private Set commenttables = new HashSet(0);
+	private Set messagetables = new HashSet(0);
 
 	// Constructors
 
@@ -21,20 +26,29 @@ public class Usertable implements java.io.Serializable {
 	public Usertable() {
 	}
 
+	/** my constructor */
+	public Usertable(String username, String name) {
+		this.username = username;
+		this.name = name;
+	}
+
 	/** minimal constructor */
-	public Usertable(String username, String password) {
+	public Usertable(String username, String password, String name) {
 		this.username = username;
 		this.password = password;
+		this.name = name;
 	}
 
 	/** full constructor */
 	public Usertable(String username, String password, String name,
-			Boolean sex, Integer age) {
+			Boolean sex, Integer age, Set commenttables, Set messagetables) {
 		this.username = username;
 		this.password = password;
 		this.name = name;
 		this.sex = sex;
 		this.age = age;
+		this.commenttables = commenttables;
+		this.messagetables = messagetables;
 	}
 
 	// Property accessors
@@ -85,6 +99,22 @@ public class Usertable implements java.io.Serializable {
 
 	public void setAge(Integer age) {
 		this.age = age;
+	}
+
+	public Set getCommenttables() {
+		return this.commenttables;
+	}
+
+	public void setCommenttables(Set commenttables) {
+		this.commenttables = commenttables;
+	}
+
+	public Set getMessagetables() {
+		return this.messagetables;
+	}
+
+	public void setMessagetables(Set messagetables) {
+		this.messagetables = messagetables;
 	}
 
 }

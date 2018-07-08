@@ -11,7 +11,7 @@
             <generator class="native" />
         </id>
         <many-to-one name="usertable" class="xin.whitenight.model.Usertable" fetch="select">
-            <column name="name" not-null="true" />
+            <column name="user" not-null="true" />
         </many-to-one>
         <many-to-one name="articletable" class="xin.whitenight.model.Articletable" fetch="select">
             <column name="article" not-null="true" />

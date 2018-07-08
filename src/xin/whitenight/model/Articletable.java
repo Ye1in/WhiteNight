@@ -1,8 +1,9 @@
 package xin.whitenight.model;
 
-
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Articletable entity. @author MyEclipse Persistence Tools
@@ -16,6 +17,7 @@ public class Articletable implements java.io.Serializable {
 	private String title;
 	private Timestamp time;
 	private String content;
+	private Set commenttables = new HashSet(0);
 
 	// Constructors
 
@@ -28,8 +30,8 @@ public class Articletable implements java.io.Serializable {
 		this.id = id;
 		this.title = title;
 		this.time = new Timestamp(time.getTime());
-//		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-//		this.time = df.format(time);
+		// SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		// this.time = df.format(time);
 	}
 
 	/** minimal constructor */
@@ -39,10 +41,12 @@ public class Articletable implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Articletable(String title, Timestamp time, String content) {
+	public Articletable(String title, Timestamp time, String content,
+			Set commenttables) {
 		this.title = title;
 		this.time = time;
 		this.content = content;
+		this.commenttables = commenttables;
 	}
 
 	// Property accessors
@@ -77,6 +81,14 @@ public class Articletable implements java.io.Serializable {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public Set getCommenttables() {
+		return this.commenttables;
+	}
+
+	public void setCommenttables(Set commenttables) {
+		this.commenttables = commenttables;
 	}
 
 }

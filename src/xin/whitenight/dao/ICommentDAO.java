@@ -4,6 +4,6 @@ import java.util.List;
 
 public interface ICommentDAO {
 
-	public List getCommentByArticleID(int id);
+	public List getCommentByArticleID(Integer id);
 
 }

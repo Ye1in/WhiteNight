@@ -13,12 +13,12 @@ public class CommentAction extends ActionSupport {
 	protected ICommentService commentService;
 	private int articleID;
 
-	public String getCommentByArticle() {
+	public void getCommentByArticle() {
 
 		List list = commentService.getCommentByArticleID(articleID);
 		Map session = ActionContext.getContext().getSession();
 		session.put("comment", list);
-		return SUCCESS;
+//		return SUCCESS;
 
 	}
 

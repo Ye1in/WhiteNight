@@ -8,7 +8,7 @@ public class CommentService implements ICommentService {
 
 	private ICommentDAO commentDAO;
 
-	public List getCommentByArticleID(int id) {
+	public List getCommentByArticleID(Integer id) {
 
 		return commentDAO.getCommentByArticleID(id);
 

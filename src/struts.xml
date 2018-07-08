@@ -6,43 +6,35 @@
 	<include file="struts-default.xml" />
 	<package name="default" extends="struts-default">
 
-		<action name="login" class="xin.whitenight.action.UserAction"
-			method="login">
+		<action name="login" class="userAction" method="login">
 			<result name="success">/index.jsp</result>
 			<result name="error">/login.jsp</result>
 		</action>
 
-		<action name="logout" class="xin.whitenight.action.UserAction"
-			method="logout">
+		<action name="logout" class="userAction" method="logout">
 			<result name="success">/index.jsp</result>
 		</action>
 
-		<action name="regist" class="xin.whitenight.action.UserAction"
-			method="regist">
+		<action name="regist" class="userAction" method="regist">
 			<result name="success">/login.jsp</result>
 			<result name="error">/regist.jsp</result>
 		</action>
 
-		<action name="articlelist" class="xin.whitenight.action.ArticleAction"
-			method="getArticlelist">
+		<action name="articlelist" class="articleAction" method="getArticlelist">
 			<result name="success">/articlelist.jsp</result>
 		</action>
 
-		<action name="article" class="xin.whitenight.action.ArticleAction"
-			method="getArticleContent">
+		<action name="article" class="articleAction" method="getArticleContent">
 			<result name="success">/article.jsp</result>
 			<result name="error">/articlelist.jsp</result>
 		</action>
 
-		<action name="newarticle" class="xin.whitenight.action.ArticleAction"
-			method="newArticle">
+		<action name="newarticle" class="articleAction" method="newArticle">
 			<result name="success">/articlelist.jsp</result>
 			<result name="error">/newarticle.jsp</result>
 		</action>
 
-		<action name="comment" class="xin.whitenight.action.CommentAction"
-			method="getCommentByArticle">
-			<result name="success">/article.jsp</result>
+		<action name="comment" class="commentAction" method="getCommentByArticle">
 		</action>
 
 	</package>

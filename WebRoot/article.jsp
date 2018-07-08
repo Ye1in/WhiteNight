@@ -50,7 +50,7 @@
 		<div class="container">
 			<s:iterator value="#session.comment" id="comment">
 				<s:property value="#comment.comment" />---<s:property
-					value="#comment.name" />
+					value="#comment.usertable.name" />
 			</s:iterator>
 		</div>
 

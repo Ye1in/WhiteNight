@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2018-07-05 21:45:49
+Date: 2018-07-08 23:55:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -22,22 +22,41 @@ DROP TABLE IF EXISTS `articletable`;
 CREATE TABLE `articletable` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` text NOT NULL,
-  `time` datetime NOT NULL,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `content` longtext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
--- Records of articletable
+-- Table structure for commenttable
 -- ----------------------------
-INSERT INTO `articletable` VALUES ('1', '1', '2018-06-21 16:58:41', '1223');
-INSERT INTO `articletable` VALUES ('2', '2', '2018-07-19 16:58:51', '1123');
-INSERT INTO `articletable` VALUES ('3', '3', '2018-07-05 18:23:15', '12');
-INSERT INTO `articletable` VALUES ('4', '4', '2018-07-05 18:23:28', '123');
-INSERT INTO `articletable` VALUES ('5', '5', '2018-07-05 18:23:36', '13');
-INSERT INTO `articletable` VALUES ('6', '6', '2018-07-05 18:23:43', '123');
-INSERT INTO `articletable` VALUES ('7', '7', '2018-07-05 18:23:53', '23');
-INSERT INTO `articletable` VALUES ('8', '8', '2018-07-05 18:24:05', '2312');
+DROP TABLE IF EXISTS `commenttable`;
+CREATE TABLE `commenttable` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `comment` text NOT NULL,
+  `article` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `time` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `comment-article` (`article`),
+  KEY `comment-user` (`name`),
+  CONSTRAINT `comment-article` FOREIGN KEY (`article`) REFERENCES `articletable` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `comment-user` FOREIGN KEY (`name`) REFERENCES `usertable` (`name`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for messagetable
+-- ----------------------------
+DROP TABLE IF EXISTS `messagetable`;
+CREATE TABLE `messagetable` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` int(11) NOT NULL,
+  `message` text NOT NULL,
+  `time` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `message-user` (`user`),
+  CONSTRAINT `message-user` FOREIGN KEY (`user`) REFERENCES `usertable` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for usertable
@@ -47,15 +66,10 @@ CREATE TABLE `usertable` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `name` varchar(20) DEFAULT NULL,
+  `name` varchar(20) NOT NULL,
   `sex` bit(1) DEFAULT NULL,
   `age` int(3) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of usertable
--- ----------------------------
-INSERT INTO `usertable` VALUES ('1', 'yl', '2543174', 'Ye1in', '', '21');
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;

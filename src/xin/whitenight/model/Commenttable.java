@@ -1,6 +1,7 @@
 package xin.whitenight.model;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * Commenttable entity. @author MyEclipse Persistence Tools
@@ -20,6 +21,15 @@ public class Commenttable implements java.io.Serializable {
 
 	/** default constructor */
 	public Commenttable() {
+	}
+
+	/** my constructor */
+
+	public Commenttable(int id, String comment, Usertable usertable, Date time) {
+		this.id = id;
+		this.comment = comment;
+		this.usertable = usertable;
+		this.time = new Timestamp(time.getTime());
 	}
 
 	/** full constructor */
