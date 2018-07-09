@@ -30,6 +30,7 @@ public class ArticleDAO extends HibernateDaoSupport implements IArticleDAO {
 				.openSession();
 		Query query = session.createQuery("SELECT count(*) from Articletable");
 		Long result = (Long) query.uniqueResult();
+		session.close();
 		return result.intValue();
 
 	}
@@ -41,7 +42,9 @@ public class ArticleDAO extends HibernateDaoSupport implements IArticleDAO {
 		Query query = session
 				.createQuery("SELECT content from Articletable where id=?");
 		query.setParameter(0, ID);
-		return (String) query.uniqueResult();
+		String result = (String) query.uniqueResult();
+		session.close();
+		return result;
 
 	}
 
