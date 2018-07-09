@@ -34,7 +34,14 @@
 			<result name="error">/newarticle.jsp</result>
 		</action>
 
+
 		<action name="comment" class="commentAction" method="getCommentByArticle">
+		</action>
+
+		<action name="commentform" class="commentAction" method="setCommentByComment">
+			<result name="input">/error.jsp</result>
+			<result name="success">/articlelist.jsp</result>
+			<result name="error">/article.jsp</result>
 		</action>
 
 	</package>

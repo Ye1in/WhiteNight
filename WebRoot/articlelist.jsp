@@ -55,7 +55,7 @@
 						<s:if test="#session.articlelist[2].title!=''">
 							<div class="box left pos1">
 								<a class="bot"
-									href="article.action?article.id=<s:property value="#session.articlelist[2].id"/>&&article.time=<s:property value="#session.articlelist[2].time"/>"
+									href="article.action?article.id=<s:property value="#session.articlelist[2].id"/>&article.time=<s:property value="#session.articlelist[2].time"/>"
 									target=_self> <s:property
 										value="#session.articlelist[2].title" /> </a>
 							</div>
@@ -64,7 +64,7 @@
 
 							<div class="box left pos1">
 								<a class="bot"
-									href="article.action?article.id=<s:property value="#session.articlelist[4].id"/>&&article.time=<s:property value="#session.articlelist[4].time"/>"
+									href="article.action?article.id=<s:property value="#session.articlelist[4].id"/>&article.time=<s:property value="#session.articlelist[4].time"/>"
 									target=_self> <s:property
 										value="#session.articlelist[4].title" /> </a>
 							</div>
@@ -76,7 +76,7 @@
 							<div class="box right pos2">
 								<div class="type"></div>
 								<a class="bot"
-									href="article.action?article.id=<s:property value="#session.articlelist[1].id"/>&&article.time=<s:property value="#session.articlelist[1].time"/>"
+									href="article.action?article.id=<s:property value="#session.articlelist[1].id"/>&article.time=<s:property value="#session.articlelist[1].time"/>"
 									target=_self> <s:property
 										value="#session.articlelist[1].title" /> </a>
 							</div>
@@ -85,7 +85,7 @@
 							<div class="box right pos2">
 								<div class="type"></div>
 								<a class="bot"
-									href="article.action?article.id=<s:property value="#session.articlelist[3].id"/>&&article.time=<s:property value="#session.articlelist[3].time"/>"
+									href="article.action?article.id=<s:property value="#session.articlelist[3].id"/>&article.time=<s:property value="#session.articlelist[3].time"/>"
 									target=_self> <s:property
 										value="#session.articlelist[3].title" /> </a>
 							</div>
@@ -94,7 +94,7 @@
 							<div class="box right pos2">
 								<div class="type"></div>
 								<a class="bot"
-									href="article.action?article.id=<s:property value="#session.articlelist[5].id"/>&&article.time=<s:property value="#session.articlelist[5].time"/>"
+									href="article.action?article.id=<s:property value="#session.articlelist[5].id"/>&article.time=<s:property value="#session.articlelist[5].time"/>"
 									target=_self> <s:property
 										value="#session.articlelist[5].title" /> </a>
 							</div>

@@ -44,7 +44,6 @@
 							naplaceholder="标题" id="title" autocomplete="off">
 					</div>
 					<div id="editor">
-						<s:property value="#session.newarticle" escape="false" />
 					</div>
 					<input type="hidden" name="article.content" id="txt" />
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Struts2Diagram version="2.0">
-  <package name="default" location="10,10" size="170,492">
+  <package name="default" location="10,10" size="170,792">
     <action name="login" location="10,20" size="150,62">
       <result name="success">
         <resourceEdge source="success" routing="0" target="index.jsp" />
@@ -35,7 +35,7 @@
         <resourceEdge source="error" routing="0" target="articlelist.jsp" />
       </result>
     </action>
-    <action name="newarticle" location="0,0" size="0,0">
+    <action name="newarticle" location="10,520" size="150,62">
       <result name="success">
         <resourceEdge source="success" routing="0" target="articlelist.jsp" />
       </result>
@@ -43,19 +43,27 @@
         <resourceEdge source="error" routing="0" target="newarticle.jsp" />
       </result>
     </action>
-    <action name="comment" location="0,0" size="0,0">
+    <action name="comment" location="10,620" size="150,41">
       <result name="success">
-        <resourceEdge source="success" routing="0" target="article.jsp" />
+        <resourceEdge source="success" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="commentform" location="10,720" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="articlelist.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="article.jsp" />
       </result>
     </action>
   </package>
-  <webResource name="index.jsp" path="/index.jsp" location="200,50" size="150,55" />
-  <webResource name="login.jsp" path="/login.jsp" location="350,50" size="150,55" />
-  <webResource name="blog.jsp" path="/blog.jsp" location="500,50" size="150,55" />
-  <webResource name="articlelist.jsp" path="/articlelist.jsp" location="50,200" size="150,55" />
-  <webResource name="regist.jsp" path="/regist.jsp" location="200,200" size="150,55" />
-  <webResource name="article.jsp" path="/article.jsp" location="350,200" size="150,55" />
-  <webResource name="newarticle.jsp" path="/newarticle.jsp" location="0,0" size="0,0" />
-  <include file="struts-default.xml" location="500,200" size="150,30" />
+  <webResource name="index.jsp" path="/index.jsp" location="300,112" size="150,55" />
+  <webResource name="login.jsp" path="/login.jsp" location="345,11" size="150,55" />
+  <webResource name="blog.jsp" path="/blog.jsp" location="510,122" size="150,55" />
+  <webResource name="articlelist.jsp" path="/articlelist.jsp" location="510,649" size="150,55" />
+  <webResource name="regist.jsp" path="/regist.jsp" location="288,173" size="150,55" />
+  <webResource name="article.jsp" path="/article.jsp" location="696,568" size="150,55" />
+  <webResource name="newarticle.jsp" path="/newarticle.jsp" location="292,387" size="150,55" />
+  <include file="struts-default.xml" location="565,266" size="150,30" />
 </Struts2Diagram>
 

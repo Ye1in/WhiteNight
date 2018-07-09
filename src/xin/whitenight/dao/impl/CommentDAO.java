@@ -27,4 +27,14 @@ public class CommentDAO extends HibernateDaoSupport implements ICommentDAO {
 		return list;
 	}
 
+	public boolean newcomment(Commenttable comment) {
+
+		try {
+			this.getHibernateTemplate().save(comment);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
 }
