@@ -41,7 +41,7 @@
 								<a href="about.jsp">About</a>
 							</li>
 							<li id="contact">
-								<a href="contact.jsp">Contact</a>
+								<a href="message.action">Contact</a>
 							</li>
 							<li id="login">
 								<s:if test="#session.user==null">
@@ -111,13 +111,21 @@ if (window.location.pathname == "/WhiteNight/login.jsp") {
 	v.setAttribute("class", "active");
 }
 if (window.location.pathname == "/WhiteNight/newarticle.jsp") {
-	v = $("login");
+	v = $("blog");
 	v.setAttribute("class", "active");
 }
 if (window.location.pathname == "/WhiteNight/article.jsp") {
 	v = $("blog");
 	v.setAttribute("class", "active");
 }
+if (window.location.pathname == "/WhiteNight/contact.jsp") {
+	v = $("contact");
+	v.setAttribute("class", "active");
+}
+if (window.location.pathname == "/WhiteNight/about.jsp") {
+	v = $("about");
+	v.setAttribute("class", "active");
+}}
 </script>
 	</body>
 </html>

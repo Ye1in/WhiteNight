@@ -20,7 +20,7 @@ public class CommentDAO extends HibernateDaoSupport implements ICommentDAO {
 		// SELECT new xin.whitenight.model.Commenttable(id,comment,new
 		// xin.whitenight.model.Usertable(c.usertable.username,c.usertable.name),time)
 		Query query = session
-				.createQuery("from Commenttable c where c.articletable.id=?");
+				.createQuery("from Commenttable c where c.articletable.id=? order by time desc");
 		query.setParameter(0, id);
 		List<Commenttable> list = query.list();
 		session.close();

@@ -38,8 +38,11 @@
 		<jsp:include page="head.jsp"></jsp:include>
 		<div class="container">
 			<div class="textarea">
+
 				<s:property value="#session.article.content" escape="false" />
-				<s:property value="#session.article.time" />
+				<div class="articletime">
+					<s:property value="#session.article.time" />
+				</div>
 			</div>
 		</div>
 
@@ -48,18 +51,31 @@
 		</s:action>
 
 		<div class="container">
-			<s:iterator value="#session.comment" id="comment">
-				<s:property value="#comment.comment" escape="false" />---<s:property
-					value="#comment.usertable.name" />
-				<br />
-				<s:property value="#comment.time" />
-			</s:iterator>
-		</div>
+			<div class="comment-user">
+				<s:if test="#session.comment.isEmpty()">
+					<jsp:body>
+						<h1 align="center">虚位以待</h1>
+					</jsp:body>
+				</s:if>
+				<s:iterator value="#session.comment" id="comment">
+					<div class="comment">
+						<s:property value="#comment.comment" escape="false" />
+					</div>
 
+					<div class="user">
+						<s:property value="#comment.usertable.name" />
+					</div>
+					<div class="commenttime">
+						<s:property value="#comment.time" />
+					</div>
+				</s:iterator>
+			</div>
+		</div>
 
 		<!-- Editor Start -->
 		<div class="container">
-			<div style="margin-top: 64px;">
+			<div
+				style="margin-top: 64px; width: 960px; margin-left: auto; margin-right: auto;">
 
 				<form action="commentform.action" method="post" id="form">
 					<div id="editor">
@@ -69,7 +85,7 @@
 						value=<s:property value="#session.user.id" /> />
 
 				</form>
-				<button id="button">
+				<button id="button" class="commitbutton">
 					提交
 				</button>
 			</div>
@@ -89,5 +105,9 @@ $("button").addEventListener('click', function() {
 		$("form").submit();
 	})
 </script>
+
+		<!-- import foot -->
+		<jsp:include page="foot.jsp"></jsp:include>
+
 	</body>
 </html>

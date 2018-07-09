@@ -194,6 +194,18 @@ div {
 	z-index: 100;
 }
 
+/* Foot Start */
+.copyright {
+	margin-top: 48px;
+	text-align: center;
+	margin-bottom: 32px;
+}
+
+.copyright a {
+	text-decoration: none;
+	color: #DF3927;
+}
+
 /* Slider Start */
 .slider {
 	margin-top: 40px;
@@ -352,7 +364,7 @@ div {
 	padding-top: 64px;
 	padding-bottom: 36px;
 	margin-top: 64px;
-	background-color: white;
+	/*background-color: white;*/
 }
 
 .content:after {
@@ -550,6 +562,63 @@ div {
 
 /* Article Start */
 .textarea {
-	padding-top: 64px;
+	margin-top: 64px;
+	width: 960px;
+	box-shadow: 1px 0px 5px 0px #BBB9B9;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 2em 2em;
+	line-height: 2em;
 }
 
+/* Comment Start */
+.comment-user {
+	margin-top: 64px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	padding: 2em 2em;
+	line-height: 2em;
+	box-shadow: 1px 0px 5px 0px #BBB9B9;
+}
+
+.comment {
+	
+}
+
+.user,.commenttime,.articletime {
+	text-align: right;
+}
+
+.commitbutton {
+	width: 100px;
+	background: gray;
+	font-weight: bold;
+	color: white !important;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin-bottom: 5px !important;
+	margin-top: 6px;
+	margin-left: 89% !important;
+}
+
+.commitbutton:hover,.commitbutton:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px black;
+}
+
+/* Leave Message Start */
+.message-box {
+	margin-top: 64px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	padding: 2em 2em;
+	line-height: 2em;
+	box-shadow: 1px 0px 5px 0px #BBB9B9;
+}
+
+.messagetime {
+	text-align: right;
+}

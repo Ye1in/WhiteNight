@@ -113,5 +113,9 @@
 				</div>
 			</div>
 		</div>
+
+		<!-- import foot -->
+		<jsp:include page="foot.jsp"></jsp:include>
+
 	</body>
 </html>

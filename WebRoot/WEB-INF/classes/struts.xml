@@ -6,6 +6,23 @@
 	<include file="struts-default.xml" />
 	<package name="default" extends="struts-default">
 
+
+		<interceptors>
+			<interceptor name="loginInteceptor"
+				class="xin.whitenight.interceptor.LoginInterceptor" />
+			<interceptor-stack name="loginStack">
+				<interceptor-ref name="loginInteceptor">
+					<param name="excludeMethods">login,regist</param>
+				</interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="loginStack" />
+
+		<global-results>
+			<result name="login">/login.jsp</result>
+		</global-results>
+
 		<action name="login" class="userAction" method="login">
 			<result name="success">/index.jsp</result>
 			<result name="error">/login.jsp</result>
@@ -42,6 +59,15 @@
 			<result name="input">/error.jsp</result>
 			<result name="success">/articlelist.jsp</result>
 			<result name="error">/article.jsp</result>
+		</action>
+
+		<action name="message" class="messageAction" method="getMessageList">
+			<result name="success">/contact.jsp</result>
+		</action>
+
+		<action name="newmessage" class="messageAction" method="setMessage">
+			<result name="success">/index.jsp</result>
+			<result name="error">/contact.jsp</result>
 		</action>
 
 	</package>

@@ -48,5 +48,9 @@
 				</fieldset>
 			</form>
 		</div>
+
+		<!-- import foot -->
+		<jsp:include page="foot.jsp"></jsp:include>
+
 	</body>
 </html>

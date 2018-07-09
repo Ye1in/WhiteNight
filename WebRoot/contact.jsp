@@ -12,8 +12,7 @@
 	<head>
 		<base href="<%=basePath%>">
 
-		<title>New Article</title>
-		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<title>Contact</title>
 		<script type="text/javascript" src="./js/js.js">
 </script>
 		<script type="text/javascript" src="./js/tool.js">
@@ -29,24 +28,37 @@
 
 
 	</head>
-
 	<body>
 		<!-- import head -->
 		<jsp:include page="head.jsp"></jsp:include>
+		<!-- Leave Message Start -->
+		<div class="container">
+			<div class="message-box">
+				<s:iterator value="#session.message" id="message">
+					<div class="message">
+						<s:property value="#message.message" escape="false" />
+					</div>
+					<div class="user">
+						<s:property value="#message.usertable.name" />
+					</div>
+					<div class="messagetime">
+						<s:property value="#message.time" />
+					</div>
+				</s:iterator>
+			</div>
+		</div>
 
 		<!-- Editor Start -->
 		<div class="container">
-			<div style="margin-top: 64px;">
+			<div
+				style="margin-top: 64px; width: 960px; margin-left: auto; margin-right: auto;">
 
-				<form action="newarticle.action" method="post" id="form">
-					<div style="margin-left: 9%; margin-bottom: 10px;">
-						<input style="width: 250px" type="text" name="article.title"
-							naplaceholder="标题" id="title" autocomplete="off">
+				<form action="newmessage.action" method="post" id="form">
+					<div id="editor">
 					</div>
-					<div id="editor"
-						style="width: 960px; margin-left: auto; margin-right: auto;">
-					</div>
-					<input type="hidden" name="article.content" id="txt" />
+					<input type="hidden" name="message.message" id="txt" />
+					<input type="hidden" name="message.usertable.id"
+						value=<s:property value="#session.user.id" /> />
 
 				</form>
 				<button id="button" class="commitbutton">
@@ -57,12 +69,15 @@
 		<script type="text/javascript">
 var E = window.wangEditor
 var editor = new E('#editor')
+
 // 或者 var editor = new E( document.getElementById('#editor') )
 editor.create();
+//editor.txt.html()
 $("button").addEventListener('click', function() {
 	var html = editor.txt.html();
 	//var text = editor.txt.text();
 		$("txt").setAttribute("value", html);
+		console.log(html);
 		$("form").submit();
 	})
 </script>

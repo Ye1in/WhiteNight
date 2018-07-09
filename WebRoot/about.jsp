@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -11,9 +11,7 @@
 	<head>
 		<base href="<%=basePath%>">
 
-		<title>Foot</title>
-
-		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<title>About</title>
 
 		<meta http-equiv="pragma" content="no-cache">
 		<meta http-equiv="cache-control" content="no-cache">
@@ -21,15 +19,15 @@
 		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 		<meta http-equiv="description" content="This is my page">
 
+
 	</head>
 
 	<body>
-		<div class="container">
-			<div class="copyright">
-				<span>Copyright © 2018.Company name All rights reserved.</span><a
-					target="_blank" href="https://github.com/Ye1in">Yelin</a>
-			</div>
+		<!-- import head -->
+		<jsp:include page="head.jsp"></jsp:include>
 
-		</div>
+		<!-- import foot -->
+		<jsp:include page="foot.jsp"></jsp:include>
+
 	</body>
 </html>
