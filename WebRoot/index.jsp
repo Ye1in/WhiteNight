@@ -38,27 +38,11 @@
 			<div class="container">
 				<div class="slider" id="slide">
 					<ul>
-						<li>
-							<a href=""><img src="img/1.jpg"
-									alt="Dream Of Dreams</br>DeLUsions from a dream.</br>
-							FamiLar pLaces appear in dreams.">
-							</a>
-						</li>
-						<li>
-							<a href=""><img src="img/2.jpg"
-									alt="Saika</br>I'm wearing a Japanese kimono</br>The knife I'm hoLding is fake.PLease don't be nerVOUS.">
-							</a>
-						</li>
-						<li>
-							<a href=""><img src="img/3.jpg"
-									alt="Knight Of Firmament</br> I WiLL use this sword to fix everything.</br>WithOUt yOU,there wouLD wouLD be no need for wishes or prayers">
-							</a>
-						</li>
-						<li>
-							<a href=""><img src="img/4.jpg"
-									alt="The sanctury</br> Perhaps trees are the final refuge.</br>Or it is onLy the pLace I escape to.">
-							</a>
-						</li>
+						<li><a href=""><img src="img/1.jpg" alt="Dream Of Dreams</br>DeLUsions from a dream.</br>
+							FamiLar pLaces appear in dreams."></a></li>
+						<li><a href=""><img src="img/2.jpg" alt="Saika</br>I'm wearing a Japanese kimono</br>The knife I'm hoLding is fake.PLease don't be nerVOUS."></a></li>
+						<li><a href=""><img src="img/3.jpg" alt="Knight Of Firmament</br> I WiLL use this sword to fix everything.</br>WithOUt yOU,there wouLD wouLD be no need for wishes or prayers"></a></li>
+						<li><a href=""><img src="img/4.jpg" alt="The sanctury</br> Perhaps trees are the final refuge.</br>Or it is onLy the pLace I escape to."></a></li>
 					</ul>
 				</div>
 				<script type="text/javascript">
