@@ -30,6 +30,7 @@ public class UserAction extends ActionSupport {
 
 	public String regist() {
 
+		user.setName(user.getUsername());
 		if (user.getPassword().equals(confirmPwd)) {
 			if (!userService.regist(user))
 				return ERROR;
